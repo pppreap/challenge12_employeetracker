@@ -10,22 +10,19 @@ require('dotenv').config;
 //create connection to database
 const connection = mysql.createConnection({
 
-    host:'localhost'
+    host:'localhost',
     //personal mysql username
     user: process.env.USER,
     //personal mysql password
     password: process.env.PASSWORD,
     //database being used
-    database: process.env.DATABASE
-    }
-    console.log (`Connected to company_db database`)
-);
+    database: process.env.DATABASE,
+});
 
 connection.connect(err=> {
     if (err) throw err;
-    viewToDo();
-    
-})
+    viewToDo();   
+});
 
 //start presented with options to view view all departments, view all roles, view all employees, 
 //add a department, add a role, add an employee, and update an employee role
@@ -229,14 +226,14 @@ addRole = () => {
 };
 
 // //function to add an employee
-addEmployee =() => {
+addEmployee = () => {
     inquirer.prompt([
         {
             type:'input',
             name:'firstName',
             message:'Enter employee first name.',
             validate: addFirstName => {
-                if (addFirstName) => {
+                if (addFirstName){
                     return true;
                 } else {
                     console.log('Please enter a first name');
@@ -249,7 +246,7 @@ addEmployee =() => {
             name:'lastName',
             message:'Enter employee last name.',
             validate: addLastName => {
-                if (addLastName) => {
+                if (addLastName){
                     return true;
                 } else {
                     console.log('Please enter a last name');
@@ -296,8 +293,8 @@ addEmployee =() => {
             const managers = managersChoice.managers;
             params.push(managers);
 
-            const sql = 'INSERT INTO employee (first_name, last_name, role_id, manager_id)
-            VALUES (?, ?, ?, ?)';
+            const sql = `INSERT INTO employee (first_name, last_name, role_id, manager_id)
+            VALUES (?, ?, ?, ?)`;
 
             connection.query(sql, params, (err,result) => {
             if (err) throw err;   
