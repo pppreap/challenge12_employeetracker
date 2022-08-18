@@ -126,7 +126,8 @@ viewEmployees = () => {
                         role.salary
                         CONCAT (manager.first_name, " ", manager.last_name) AS manager from employee
                         LEFT JOIN role ON employee.role_id = role.id
-                        LEFT JOIN department ON role.department_id= manager.id `;
+                        LEFT JOIN department ON role.department_id= manager.id
+                        LEFT JOIN employee manager ON employee.namager_id =manager.id`;
                         
 
     connection.promise().query(sql, (err, rows) => {
@@ -137,13 +138,59 @@ viewEmployees = () => {
 };
 
 // //function to add a department
-// addDept = () => {
-
-// };
+addDept = () => {
+    inquirer.prompt([
+        {
+        type:'input',
+        name:'addDeptName',
+        message:'Enter the name of the department',
+        validate: addDeptName => {
+            if (addDeptName){
+                return true;
+            } else {
+                console.log ('Please enter name for department');
+                return false;
+            }
+        }
+        }
+    ])
+    .then(answer=>{
+        const sql=`INSERT INTO department(name)
+                   VALUES (?)`;
+        connection.query(sql, answer.addDeptName, (err,result) => {
+            if (err) throw err;
+            console.log('Added' + answer.addDeptName + 'to departments!');
+            viewDepts();
+        });
+    });
+};
 
 // //function to add a role
-// addRole = () => {
-
+addRole = () => {
+    inquirer.prompt([
+        {
+        type:'input',
+        name:'roleName',
+        message:'Enter the name of the role',
+        validate: roleName => {
+            if (roleName){
+                return true;
+            } else {
+                console.log ('Please enter name for the role');
+                return false;
+            }
+        }
+        }
+    ])
+    .then(answer=>{
+        const sql=`INSERT INTO role(title)
+                   VALUES (?)`;
+        connection.query(sql, answer.roleName, (err,result) => {
+            if (err) throw err;
+            console.log('Added' + answer.roleName + 'to roles!');
+            viewRoles();
+        });
+    });
 // };
 
 // //function to add an employee
