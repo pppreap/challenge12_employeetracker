@@ -1,7 +1,7 @@
 {
   "name": "challenge12_employeetracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Using Node.js, Inquirer, and MySQL, a command-line application will be created that allow users to easily view and interact with information stored in databases.  Link to [Application Functionality Video]:(https://)",
   "main": "index.js",
   "dependencies": {
     "ansi-escapes": "^4.3.2",

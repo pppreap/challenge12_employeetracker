@@ -1,7 +1,7 @@
 # Module 12: SQL Challenge: Employee Tracker
 
 Using Node.js, Inquirer, and MySQL, a command-line application will be created that allow users to easily view and interact with information stored in databases. 
-Link to [Application Functionality Video]:(https://)
+Link to [Application Functionality Video]:(https://youtu.be/hWRVFf5e3oQ)
 
 # User Story for Employee Tracker
 
@@ -13,7 +13,7 @@ The developer will create an command line application that will fulfill these cr
 - The Inquirer package to interact with the user via command line.
 - The console.table package to print MySQL rows to the console.
 
-The following video shows an example of the application being used from the command line:
+The following video shows an example of the application being used from the command line: (https://youtu.be/hWRVFf5e3oQ)
 
 ## Criteria
 
@@ -58,15 +58,19 @@ run
 
 ### Assets
 These are images of the working application.
-![Start of the application](./assets/startpg.png)
-![Saved Posts](./assets/post.png)
-![Click New Post](./assets/newpost.png)
-![Show/Hide Image](./assets/show%3Ahideimage.png)
+![Start of the application](./assets/start.png)
+![View all departments](./assets/depts.png)
+![View all employees display](./assets/employees.png)
+![View all roles](./assets/roles.png)
+![Add department](./assets/adddept.png)
+![Add role](./assets/addrole.png)
+![Add employee](./assets/addemployee.png)
+![Update employee role](./assets/updaterole.png)
 
 #### Links
 [Github Repository](https://github.com/pppreap/challenge12_employeetracker) 
 ///
-[Link to  Functionality Video](/)
+[Link to  Functionality Video](https://youtu.be/hWRVFf5e3oQ)
 
 #### License/ Credits
 User Story and Criterias from Michigan State University Boot Camp.
