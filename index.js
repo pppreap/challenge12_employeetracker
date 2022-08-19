@@ -3,8 +3,8 @@ const inquirer = require('inquirer');
 const mysql = require('mysql2');
 const cTable = require('console.table');
 
-//loads variable from .env file
-require('dotenv').config;
+// //loads variable from .env file
+// require('dotenv').config;
 
 //create connection to database
 const connection = mysql.createConnection({
@@ -20,6 +20,7 @@ const connection = mysql.createConnection({
     console.log('Connected to the company database')
     );
 
+    //connect to mysql server and sql database
 connection.connect(function (err){
     if (err) throw err;
     //run the prompts after connection is made
@@ -93,7 +94,7 @@ const viewDepts = () => {
     
         console.table(res);
         console.log('This is the end of the data');
-        return viewToDo();
+        viewToDo();
     });
 };
 
@@ -114,7 +115,7 @@ const viewRoles = () => {
     });    
 };
 
-// //function to view all employess
+// //function to view all employees
 viewEmployees = () => {
     console.log(`Viewing all employees...\n`)
     const sql = `SELECT employees.id, 
