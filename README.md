@@ -57,13 +57,13 @@ run
 - npm start
 
 ### Assets
-These are images of the working application.
+These are images of the working application functionalities: start application, view all departments, roles, employees,  add role, department or new employee or update role in the company database via the command line.
 ![Start of the application](./assets/start.png)
 ![View all departments](./assets/depts.png)
 ![View all employees display](./assets/employees.png)
 ![View all roles](./assets/roles.png)
 ![Add department](./assets/adddept.png)
-![Add role](./assets/addrole.png)
+![Add role](./assets/addrole.ong.png)
 ![Add employee](./assets/addemployee.png)
 ![Update employee role](./assets/updaterole.png)
 
